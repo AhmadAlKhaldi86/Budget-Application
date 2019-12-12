@@ -3,7 +3,7 @@
 ![](https://github.com/AhmadAlKhaldi86/Budget-Application/blob/master/images/Project-Spec.png)
 
 
-#### Hexcodes 
+### Hexcodes 
 ```diff
 #FF5757 Red
 #FFBE0B Orange
