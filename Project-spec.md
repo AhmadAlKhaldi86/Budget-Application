@@ -19,8 +19,9 @@
 - When amount hits 10% left of total budget an alert is triggered.
 - If the TotalSpent = or > than weeklyBudget - Alert they cannot spend.
 
-#### Allow the user to choose between four categories for each purchase.
-#### The user should be able to see how much money is being spent on each of the four categories.
+
+> Allow the user to choose between four categories for each purchase.
+> The user should be able to see how much money is being spent on each of the four categories.
 
 - We can create a class called purchasedItems
 - Add methods where
