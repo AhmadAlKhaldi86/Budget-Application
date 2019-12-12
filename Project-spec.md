@@ -10,9 +10,15 @@
 - ItemCost
 - TotalSpent : This step will require a variable that sums up all amount spent during the week to last purchased item.
 
-#### track how much is left based on their purchases throughout the week.
-#### Must indicate to the user how much money has been spent.
-#### If their budget is consumed within the week, they must be notified that they cannot purchase additional items.
+#### 
+#### 
+#### 
+
+```diff
++ track how much is left based on their purchases throughout the week. <br>
++ Must indicate to the user how much money has been spent.<br>
++ If their budget is consumed within the week, they must be notified that they cannot purchase additional items.
+```
 
 - Subtract "TotalSpent" from "weeklyBudget"
 - weeklyBudget amount left can be tracked in HTML/CSS in the page with colors
