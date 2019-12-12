@@ -1,18 +1,21 @@
-#### Create an application that allows users to enter their weekly budget.
+```diff 
++ Create an application that allows users to enter their weekly budget.
+```
 
 - This Step requires an alert for the user to enter their week budget.
 - Store the user input in a variable "weeklyBudget"
 - When the week ends start over.
 
-#### Items purchased should be added in a list with their cost.
+
+
+```diff
++ Items purchased should be added in a list with their cost.
+```
 
 - itemName
 - ItemCost
 - TotalSpent : This step will require a variable that sums up all amount spent during the week to last purchased item.
 
-#### 
-#### 
-#### 
 
 ```diff
 + track how much is left based on their purchases throughout the week. <br>
