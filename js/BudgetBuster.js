@@ -49,10 +49,10 @@ class spending {
         this.clothingSpending.push(amount);
     }
 
-    getSpending(expense) {
+    getSpending(selectedItem) {
         function addFun(a,b) { return a + b;}
         let sum;
-        switch (expense) {
+        switch (selectedItem) {
             case 'ent':
                 sum = this.entSpending.reduce(addFun);
                 return sum;
@@ -95,28 +95,27 @@ function getCategory() {
     // selectedItem will store the category  entered with expense. 
     let selectedItem = selectItems.options[selectItems.selectedIndex].value;
 
+    // If the amount entered is less than 1 or not a number it will not add or get the total.
     // Below conditional statement will check category then adds the amount expensed in in respected category
     // Also Once a new amount is added in respected category below will return new total of same respected category
-    if (selectedItem === 'food') {
-        expense = 'food';
+    if (amount < 1 || isNaN(amount)) {
+        console.log("What the hell");
+    } else if (selectedItem === 'food') {
         User.addFoodSpending(amount);
-        User.getSpending(expense);
-        console.log(User.getSpending(expense));
+        User.getSpending(selectedItem);
+        console.log(User.getSpending(selectedItem));
     } else if (selectedItem === 'bills') {
-        expense = 'bills';
         User.addBillsSpending(amount);
-        User.getSpending(expense);
-        console.log(User.getSpending(expense));
+        User.getSpending(selectedItem);
+        console.log(User.getSpending(selectedItem));
     } else if (selectedItem === 'ent') {
-        expense = 'ent';
         User.addEntSpending(amount);
-        User.getSpending(expense);
-        console.log(User.getSpending(expense));
+        User.getSpending(selectedItem);
+        console.log(User.getSpending(selectedItem));
     } else if (selectedItem === 'clothing') {
-        expense = 'clothing';
         User.addClothingSpending(amount);
-        User.getSpending(expense);
-        console.log(User.getSpending(expense));
+        User.getSpending(selectedItem);
+        console.log(User.getSpending(selectedItem));  
     }
 }
 
