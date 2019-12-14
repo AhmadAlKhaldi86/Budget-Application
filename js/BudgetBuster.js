@@ -49,10 +49,27 @@ class spending {
         this.clothingSpending.push(amount);
     }
 
-    getEntSpending() {
+    getSpending(expense) {
         function addFun(a,b) { return a + b;}
-        const sum = this.entSpending.reduce(addFun);
-        return sum;
+        let sum;
+        switch (expense) {
+            case 'ent':
+                sum = this.entSpending.reduce(addFun);
+                return sum;
+                break;
+            case 'clothing':
+                sum = this.clothingSpending.reduce(addFun);
+                return sum;
+                break;
+            case 'bills':
+                sum = this.billsSpending.reduce(addFun);
+                return sum;
+                break;
+            case 'food':
+                sum = this.foodSpending.reduce(addFun);
+                return sum;
+                break;
+        }
     }
 }
 
@@ -60,26 +77,46 @@ class spending {
 // userName = get from input 
 let User = new spending("Ahmad");
 
-// Getting the DOM Elements that will be used to add amount spent to our object. 
+// add below is the button that submits new expense  
 let add = document.getElementById("Add");
+// selectItems is the dropDown that selects the category item
 let selectItems = document.getElementById("category");
+
+
+
+
+// This Function will check "Category" + added Amount
+// Use them to add the amount entered in the respected category
 function getCategory() {
+    // amount variable will store the amount entered as an expense 
     let amountStr = document.getElementById("amount").value;
     let amount = Number(amountStr);
+
+    // selectedItem will store the category  entered with expense. 
     let selectedItem = selectItems.options[selectItems.selectedIndex].value;
+
+    // Below conditional statement will check category then adds the amount expensed in in respected category
+    // Also Once a new amount is added in respected category below will return new total of same respected category
     if (selectedItem === 'food') {
+        expense = 'food';
         User.addFoodSpending(amount);
-        console.log(User.foodSpending);
+        User.getSpending(expense);
+        console.log(User.getSpending(expense));
     } else if (selectedItem === 'bills') {
+        expense = 'bills';
         User.addBillsSpending(amount);
-        console.log(User.billsSpending);
+        User.getSpending(expense);
+        console.log(User.getSpending(expense));
     } else if (selectedItem === 'ent') {
+        expense = 'ent';
         User.addEntSpending(amount);
-        User.getEntSpending();
-        console.log(User.getEntSpending());
+        User.getSpending(expense);
+        console.log(User.getSpending(expense));
     } else if (selectedItem === 'clothing') {
+        expense = 'clothing';
         User.addClothingSpending(amount);
-        console.log(User.clothingSpending);
+        User.getSpending(expense);
+        console.log(User.getSpending(expense));
     }
 }
 
