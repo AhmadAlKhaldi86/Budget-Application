@@ -1,20 +1,3 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
-
-div {
-    border: 1px black solid;
-    text-align: center;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-}
-
-@media screen and (min-width: 356px) {
-    
-}
