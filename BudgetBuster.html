@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BudgetBuster</title>
+    <link rel="stylesheet" href="../css/BudgetBuster.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Budget Buster logo.png">
+</head>
+<body>
+    <h1>Hello, </h1>
+    <span> Weekly Budget: $ </span>
+    <div class="form">
+    <form >
+        <input id="budget" placeholder="Enter Weekly Budget" />
+        <input id="name" placeholder="Enter you name" />
+        <button type="submit" onclick=main()">Action!!!</button>
+        Expense: <input type="text" placeholder="" id="display">
+        Type:
+            <label for="Entertainment">
+            <input type="radio" text="Entertainment" name="Expenses" id="entertainment" value="entertainment">Entertainment</input>
+            </label>
+                
+            <label for="Food">
+            <input type="radio" text="Food" name="Expenses" id="food" value="food">Food</input>
+            </label>
+                
+            <label for="Clothing">
+            <input type="radio" text="Clothing" name="Expenses" id="clothing" value="clothing">Clothing</input>
+            </label>
+
+            <label for="Bills">
+            <input type="radio" text="Bills" name="Expenses" id="Bills" value="Bills">Bills</input>
+            </label>
+
+            <ol id="entertainment-list">
+                Entertainment
+            </ol>
+
+            <ol id="food-list">
+                Food
+            </ol>
+
+            <ol id="clothing-list">
+                Clothing
+            </ol>
+
+            <ol id="bills-list">
+                Bills
+            </ol>
+        <input type="submit" id="click" value="Add"></input>
+    </form>    
+    </div>
+    </p>
+    
+    <script src="../js/BudgetBuster.js"></script>
+</body>
+</html>
