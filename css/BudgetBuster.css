@@ -1,3 +1,10 @@
 html {
     font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: #D6F9DD;
+    text-align: center;
+}
+
+.logo {
+    width: 300px;
 }
