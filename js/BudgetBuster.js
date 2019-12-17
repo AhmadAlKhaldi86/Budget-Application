@@ -103,7 +103,7 @@ function getCategory() {
     // Below conditional statement will check category then adds the amount expensed in in respected category
     // Also Once a new amount is added in respected category below will return new total of same respected category
     if (amount < 1 || isNaN(amount)) {
-        console.log("What the hell");
+        console.log("Try again!");
     } else if (selectedItem === 'food') {
         User.addFoodSpending(amount);
         User.getSpending(selectedItem);
@@ -129,7 +129,13 @@ add.addEventListener("click", getCategory, false);
 
 // This function will call User.getTotalSpending(); method on the class to get total spending for all categories. 
 function getTotalSpending() {
-    User.getTotalSpending();
-    console.log(User.getTotalSpending());
+    let amountStr = document.getElementById("amount").value;
+    let amount = Number(amountStr);
+    if (amount < 1 || isNaN(amount)) {
+        console.log("Please enter a number bigger than 0")
+    } else {
+        User.getTotalSpending();
+        console.log(User.getTotalSpending());
+    }
 }
 add.addEventListener("click", getTotalSpending, false);
