@@ -72,8 +72,12 @@ class spending {
         }
     }
     getTotalSpending() {
+        let budget = 500;
         let totalSpending = this.getSpending('ent') + this.getSpending('clothing') + this.getSpending('bills') + this.getSpending('food');
-        return totalSpending
+        let amountLeft = budget - totalSpending;
+        console.log("totalSpending :" +  totalSpending);
+        console.log("amountLeft :" +  amountLeft);
+        return totalSpending, amountLeft
     }
 }
 
@@ -91,7 +95,7 @@ let selectItems = document.getElementById("category");
 
 // This Function will check "Category" + added Amount
 // Use them to add the amount entered in the respected category
-function getCategory() {
+function main() {
     // amount variable will store the amount entered as an expense 
     let amountStr = document.getElementById("amount").value;
     let amount = Number(amountStr);
@@ -107,35 +111,25 @@ function getCategory() {
     } else if (selectedItem === 'food') {
         User.addFoodSpending(amount);
         User.getSpending(selectedItem);
-        console.log(User.getSpending(selectedItem));
+        User.getTotalSpending();
+        console.log(selectedItem + ": " + User.getSpending(selectedItem));
     } else if (selectedItem === 'bills') {
         User.addBillsSpending(amount);
         User.getSpending(selectedItem);
-        console.log(User.getSpending(selectedItem));
+        User.getTotalSpending();
+        console.log(selectedItem + ": " + User.getSpending(selectedItem));
     } else if (selectedItem === 'ent') {
         User.addEntSpending(amount);
         User.getSpending(selectedItem);
-        console.log(User.getSpending(selectedItem));
+        User.getTotalSpending();
+        console.log(selectedItem + ": " + User.getSpending(selectedItem));
     } else if (selectedItem === 'clothing') {
         User.addClothingSpending(amount);
         User.getSpending(selectedItem);
-        console.log(User.getSpending(selectedItem));  
+        User.getTotalSpending();
+        console.log(selectedItem + ": " + User.getSpending(selectedItem));  
     }
 }
 
 // Adding an event Listener to trigger every time a user is adding new expense. 
-add.addEventListener("click", getCategory, false);
-
-
-// This function will call User.getTotalSpending(); method on the class to get total spending for all categories. 
-function getTotalSpending() {
-    let amountStr = document.getElementById("amount").value;
-    let amount = Number(amountStr);
-    if (amount < 1 || isNaN(amount)) {
-        console.log("Please enter a number bigger than 0")
-    } else {
-        User.getTotalSpending();
-        console.log(User.getTotalSpending());
-    }
-}
-add.addEventListener("click", getTotalSpending, false);
+add.addEventListener("click", main, false);
