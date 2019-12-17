@@ -75,14 +75,13 @@ class spending {
 
 // Creating an object of new user
 // userName = get from input 
-let inputNumber = new spending("Ahmad");
 
 // updating the name on the document
 let nameInput = document.getElementById("name");
    let nameChange = nameInput.value;
    document.querySelector("h1").textContent = `Hello ${nameChange}`;
 
- 
+let user = new spending(nameChange);
 // add below is the button that submits new expense  
 let add = document.getElementById("Add");
 
@@ -106,21 +105,21 @@ function getCategory() {
     if (amount < 1 || isNaN(amount)) {
         console.log("What the hell");
     } else if (selectedItem === 'food') {
-        inputNumber.addFoodSpending(amount);
-        inputNumber.getSpending(selectedItem);
-        console.log(inputNumber.getSpending(selectedItem));
+        user.addFoodSpending(amount);
+        user.getSpending(selectedItem);
+        console.log(user.getSpending(selectedItem));
     } else if (selectedItem === 'bills') {
-        inputNumber.addBillsSpending(amount);
-        inputNumber.getSpending(selectedItem);
-        console.log(inputNumber.getSpending(selectedItem));
+        user.addBillsSpending(amount);
+        user.getSpending(selectedItem);
+        console.log(user.getSpending(selectedItem));
     } else if (selectedItem === 'ent') {
-        inputNumber.addEntSpending(amount);
-        inputNumber.getSpending(selectedItem);
-        console.log(inputNumber.getSpending(selectedItem));
+        user.addEntSpending(amount);
+        user.getSpending(selectedItem);
+        console.log(user.getSpending(selectedItem));
     } else if (selectedItem === 'clothing') {
-        inputNumber.addClothingSpending(amount);
-        inputNumber.getSpending(selectedItem);
-        console.log(inputNumber.getSpending(selectedItem));  
+        user.addClothingSpending(amount);
+        user.getSpending(selectedItem);
+        console.log(user.getSpending(selectedItem));  
     }
 }
 

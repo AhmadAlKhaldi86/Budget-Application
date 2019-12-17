@@ -8,3 +8,19 @@ html {
 .logo {
     width: 300px;
 }
+
+.notify-area-outer-box {
+    background-color: white;
+    /* border: 1px solid yellow; */
+    width: 40%;
+    height: 25;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+
