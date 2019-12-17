@@ -21,20 +21,41 @@
             <h2>purchases </h2>
             <p>Pick Category:</p>
             <select name="category" id="category">
-                <option value="ent" selected="selected">Entertainment</option>
+                <option value="ent" name="type" selected="selected">Entertainment</option>
                 <option value="food">food</option>
                 <option value="clothing">clothing</option>
                 <option value="bills">bills</option>
             </select>
         </div>
         <input id="amount" placeholder="Please Enter the amount you spent" />
-        <button type="button" id="Add">Add</button>
+        <input type="submit" value="Add" id="add">
     </form>
 
-    <div class="notify-area-outer-box" id="expense-list">
-        <h5 class="item-list">Expense:</h5>
-        <h5>Amount:</h5>
-        <h5></h5>
+    <div class="largeBox">
+    <div class="expenseBox" id="expense-list">
+        <div>
+            <h3>Expense:</h3>
+            <div id="line"></div>
+        <ul id="expensesList">
+            <li>Entertainment:</li>
+            <li>Food:</li>
+            <li>Clothing:</li>
+            <li>Bills</li>
+        </ul>
+        </div>
+        <div>
+        <h3>Amount:</h3>
+        <div id="line"></div>
+        <ul id="amountList">
+        </ul>
+        </div>
+    </div>
+    <div class="budget">
+        <p class="title">Expenses</p>
+        <p class="money"><span>$</span><span id="expense-amount">0</span></p>
+        <p class="title">Amount Remaining</p>
+        <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
+    </div>
     </div>
     <script src="../js/BudgetBuster.js"></script>
 </body>
