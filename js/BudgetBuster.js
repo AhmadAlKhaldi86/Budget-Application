@@ -20,19 +20,12 @@ if (n === weekday[4]) {
 
 // This Class is used to create a template for the user expenses 
 class spending {
-    constructor(userName) {
+    constructor() {
         this.entSpending =  [];
         this.foodSpending =  [];
         this.billsSpending =  [];
         this.clothingSpending =  [];
-        this.userName = userName;
       }
-
-    getUser(userName) {
-        return userName;
-        console.log(userName);
-    } 
-
     addEntSpending(amount) {
         this.entSpending.push(amount);
     }
@@ -81,10 +74,11 @@ class spending {
     }
 }
 
+
+//----------------- Global Variables --------------------// 
 // Creating an object of new user
 // userName = get from input 
 let User = new spending("Ahmad");
-
 // add below is the button that submits new expense  
 let add = document.getElementById("Add");
 // selectItems is the dropDown that selects the category item
@@ -92,7 +86,7 @@ let selectItems = document.getElementById("category");
 
 
 
-
+//-------------------- Main Function ------------------------// 
 // This Function will check "Category" + added Amount
 // Use them to add the amount entered in the respected category
 function main() {
@@ -111,23 +105,23 @@ function main() {
     } else if (selectedItem === 'food') {
         User.addFoodSpending(amount);
         User.getSpending(selectedItem);
+        console.log(selectedItem + "Spending: " + User.getSpending(selectedItem));
         User.getTotalSpending();
-        console.log(selectedItem + ": " + User.getSpending(selectedItem));
     } else if (selectedItem === 'bills') {
         User.addBillsSpending(amount);
         User.getSpending(selectedItem);
+        console.log(selectedItem + "Spending: " + User.getSpending(selectedItem));
         User.getTotalSpending();
-        console.log(selectedItem + ": " + User.getSpending(selectedItem));
     } else if (selectedItem === 'ent') {
         User.addEntSpending(amount);
         User.getSpending(selectedItem);
+        console.log(selectedItem + "Spending: " + User.getSpending(selectedItem));
         User.getTotalSpending();
-        console.log(selectedItem + ": " + User.getSpending(selectedItem));
     } else if (selectedItem === 'clothing') {
         User.addClothingSpending(amount);
         User.getSpending(selectedItem);
+        console.log(selectedItem + "Spending: " + User.getSpending(selectedItem));
         User.getTotalSpending();
-        console.log(selectedItem + ": " + User.getSpending(selectedItem));  
     }
 }
 
