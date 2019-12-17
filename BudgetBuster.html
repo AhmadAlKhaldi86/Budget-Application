@@ -5,56 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BudgetBuster</title>
-    <link rel="stylesheet" href="../css/BudgetBuster.css">
+    <link rel="stylesheet" href="BudgetBuster.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../images/Budget Buster logo.png">
+    <link rel="shortcut icon" href="../images?Budget Buster logo.png">
 </head>
-<body>
-    <h1>Hello, </h1>
-    <span> Weekly Budget: $ </span>
-    <div class="form">
-    <form >
-        <input id="budget" placeholder="Enter Weekly Budget" />
-        <input id="name" placeholder="Enter you name" />
-        <button type="submit" onclick=main()">Action!!!</button>
-        Expense: <input type="text" placeholder="" id="display">
-        Type:
-            <label for="Entertainment">
-            <input type="radio" text="Entertainment" name="Expenses" id="entertainment" value="entertainment">Entertainment</input>
-            </label>
-                
-            <label for="Food">
-            <input type="radio" text="Food" name="Expenses" id="food" value="food">Food</input>
-            </label>
-                
-            <label for="Clothing">
-            <input type="radio" text="Clothing" name="Expenses" id="clothing" value="clothing">Clothing</input>
-            </label>
 
-            <label for="Bills">
-            <input type="radio" text="Bills" name="Expenses" id="Bills" value="Bills">Bills</input>
-            </label>
+<body>     
+    <h2>Hello, </h2>
+    <h3>Weekly Budget: $ </h3>
+    <div class="budget-buddy-layout">
+        <div class="budget-form-outer-box">
+            <form id="budget-form">
+                <h5>Please Enter Your Budget</h5>
+                <input type="number" id="budget-input">
+                <button class="budget-submit" id="budget-submit">Calculate</button>
+            </form>
+        </div>
+        <div class="amount-totals-outer-box">
+            <h6 class="green">Budget</h6 cl>
+            <h4 class="green"><span>$</span><span id="budget-amount">0</span></h4>
+            <h6 class="red">Expenses</h6>
+            <h4 class="red"><span>$</span><span id="expense-amount">0</span></h4>
+            <h6>Bank</h6>
+            <h4><span id="bank">$</span><span id="bank-amount">0</span></h4>
+        </div>
+        <div class="expense-form-outer-box">
+            <form id="expense-form">
+                <h5>Please Enter Expense</h5>
+                <div class="radio-buttons-box">
+                    <label for="Entertainment"class="expense-form-label">
+                        <input type="radio" text="Entertainment" name="Expense" id="entertainment-input" value="entertainment">Entertainment</input>
+                    </label>
+                    <label for="Food"class="expense-form-label">
+                        <input type="radio" text="Food" name="Expense" id="food-input" value="food">Food</input>
+                    </label>
+                    <label for="Clothing"class="expense-form-label">
+                        <input  type="radio" text="Clothing" name="Expense" id="clothing-input" value="clotihing">Clothing</input>
+                    </label>
+                    <label for="Bills"class="expense-form-label">
+                        <input  type="radio" text="Bills" name="Expense" id="bills-input" value="bills">Bills</input>
+                    </label>
+                </div>
+                <h5>Please Enter Expense Amount<h5>
+                <input type="number" id="expense-input">
+                <button class="expense-submit" id="expense-submit">Enter</button>
+            </form>
+        </div>
 
-            <ol id="entertainment-list">
-                Entertainment
-            </ol>
-
-            <ol id="food-list">
-                Food
-            </ol>
-
-            <ol id="clothing-list">
-                Clothing
-            </ol>
-
-            <ol id="bills-list">
-                Bills
-            </ol>
-        <input type="submit" id="click" value="Add"></input>
-    </form>    
+        
+        <div class="notify-area-outer-box" id="expense-list">
+            <h5 class="item-list">Expense:</h5>
+            <h5>Amount:</h5>
+            <h5></h5>
+        </div>
     </div>
-    </p>
-    
-    <script src="../js/BudgetBuster.js"></script>
+
+
+    <script src="BudgetBuster.js"></script>
 </body>
 </html>

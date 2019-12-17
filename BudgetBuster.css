@@ -1,20 +1,125 @@
+/*
+#FF5757 Red
+#FFBE0B Orange
+#FB5607 Red-Orange
+#CCFF66 Green
+#65DEF1 Blue
+*/
+
 html {
     font-family: 'Roboto', sans-serif;
 }
 
-div {
-    border: 1px black solid;
+body {
+    background: #CCFF66;
+    text-align: left;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+color: red;
+}
+
+.budget-buddy-layout {
+    display: flex;
+    flex-flow: row wrap;
+    height:100%;
+    width: 100%;
+}
+
+.budget-form-outer-box {
+    text-align: left;
+    background-color:white;
+    padding: 10px;
+    border: 1px solid green;
+    height: 25%;
+    width: 40%;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.budget-submit {
+    background-color: silver;
+    color: green;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.amount-totals-outer-box {
+    background-color: white;
+    border: 1px solid orange;
+    width: 25%;
+    display: flex;
+    flex-flow: row wrap;
+    height: 25%;
+    margin: 20px;
+    border-radius: 5px;
+    position: relative;
+    font-size: 15px;
+    justify-content: center;
     text-align: center;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
+h6 {
+    display: inline-block;
+    margin: 0;
+    width: 50%;
 }
 
-@media screen and (min-width: 356px) {
-    
+h4 {
+    display: inline-block;
+    margin: 0;
+    width: 50%;
+    padding: 10px;
+}
+
+
+.expense-form-outer-box {
+    text-align: left;
+    background-color:white;
+    padding: 10px;
+    border: 1px solid red;
+    width: 30%;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.radio-buttons-box{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.expense-form-label {
+    font-size: 12px;
+    color: red;
+}
+
+.expense-submit {
+    background-color:silver;
+    color: red;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.notify-area-outer-box {
+    background-color: white;
+    border: 1px solid yellow;
+    width: 40%;
+    height: 25;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
