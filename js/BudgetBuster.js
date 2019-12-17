@@ -54,22 +54,26 @@ class spending {
         let sum;
         switch (selectedItem) {
             case 'ent':
-                sum = this.entSpending.reduce(addFun);
+                sum = this.entSpending.reduce(addFun,0);
                 return sum;
                 break;
             case 'clothing':
-                sum = this.clothingSpending.reduce(addFun);
+                sum = this.clothingSpending.reduce(addFun,0);
                 return sum;
                 break;
             case 'bills':
-                sum = this.billsSpending.reduce(addFun);
+                sum = this.billsSpending.reduce(addFun,0);
                 return sum;
                 break;
             case 'food':
-                sum = this.foodSpending.reduce(addFun);
+                sum = this.foodSpending.reduce(addFun,0);
                 return sum;
                 break;
         }
+    }
+    getTotalSpending() {
+        let totalSpending = this.getSpending('ent') + this.getSpending('clothing') + this.getSpending('bills') + this.getSpending('food');
+        return totalSpending
     }
 }
 
@@ -121,3 +125,11 @@ function getCategory() {
 
 // Adding an event Listener to trigger every time a user is adding new expense. 
 add.addEventListener("click", getCategory, false);
+
+
+// This function will call User.getTotalSpending(); method on the class to get total spending for all categories. 
+function getTotalSpending() {
+    User.getTotalSpending();
+    console.log(User.getTotalSpending());
+}
+add.addEventListener("click", getTotalSpending, false);
