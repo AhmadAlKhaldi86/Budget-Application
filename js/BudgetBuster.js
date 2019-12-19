@@ -91,6 +91,7 @@ let selectItems = document.getElementById("category");
 
 // This Function will check "Category" + added Amount
 // Use them to add the amount entered in the respected category
+let formElement = document.querySelector("form");
 function getCategory() {
     // amount variable will store the amount entered as an expense 
     let amountStr = document.getElementById("amount").value;
@@ -108,6 +109,7 @@ function getCategory() {
         user.addFoodSpending(amount);
         user.getSpending(selectedItem);
         console.log(user.getSpending(selectedItem));
+        
     } else if (selectedItem === 'bills') {
         user.addBillsSpending(amount);
         user.getSpending(selectedItem);
