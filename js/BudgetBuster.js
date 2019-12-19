@@ -87,7 +87,9 @@ function main() {
 
     // If the amount entered is less than 1 or not a number it will not add or get the total.
     // Below conditional statement will check category then adds the amount expensed in in respected category
-    // Also Once a new amount is added in respected category below will return new total of same respected category
+    // Also Once a new amount is added in respected category below will return new total expense of same respected category
+    // It will also return the total spending accross all categories. 
+    
     if (amount < 1 || isNaN(amount)) {
         console.log("Try again!");
     } else if (selectedItem === 'food') {
