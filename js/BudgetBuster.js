@@ -65,7 +65,7 @@ document.querySelector("h1").textContent = `Hello ${nameChange}`;
 
 
 // Creating an object of new user
-let User = new spending(nameChange);
+let User = new spending();
 
 // add is the button that submits new expense  
 let add = document.getElementById("Add");
