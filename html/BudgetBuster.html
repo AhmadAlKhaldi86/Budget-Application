@@ -13,9 +13,55 @@
     <h1>Hello, </h1>
     <p>
         <input id="name" placeholder="Enter you name" />
-        <button type="submit" main()">Action!!!</button>
+        <button onclick = main()>Action!!!</button>
     </p>
-    <span> Weekly Budget: $ </span>
+    <span> Weekly Budget: $500 </span>
+    <form action="https://www.google.com/" method="get"></form>
+        <div id="page">
+            <h2>purchases </h2>
+            <p>Pick Category:</p>
+            <select name="category" id="category">
+                <option value="ent" name="type" selected="selected">Entertainment</option>
+                <option value="food">food</option>
+                <option value="clothing">clothing</option>
+                <option value="bills">bills</option>
+            </select>
+        </div>
+        <input id="amount" placeholder="Please Enter the amount you spent" />
+        <input type="submit" value="Add" id="add">
+    </form>
+
+    <div class="largeBox">
+    <div class="expenseBox" id="expense-list">
+        <div>
+            <h3>Expense:</h3>
+            <div id="line"></div>
+        <ul id="expensesList">
+            <li>Entertainment:</li>
+            <li>Food:</li>
+            <li>Clothing:</li>
+            <li>Bills</li>
+        </ul>
+        </div>
+        <div>
+        <h3>Amount:</h3>
+        <div id="line"></div>
+        <ul id="amountList">
+            <li>$0</li>
+            <li>$0</li>
+            <li>$0</li>
+            <li>$0</li>
+
+        </ul>
+        </div>
+    </div>
+    <div class="budget">
+        <p class="title">Expenses</p>
+        <p class="money"><span>$</span><span id="expense-amount">0</span></p>
+        <p class="title">Amount Remaining</p>
+        <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
+    </div>
+    </div>
     <script src="../js/BudgetBuster.js"></script>
 </body>
 </html>
