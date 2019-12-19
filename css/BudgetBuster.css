@@ -51,6 +51,13 @@ html {
     padding-bottom: 5px;
     padding-left: 10px;
 }
+
+#amountList {
+    list-style: none;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
 h3 {
     text-align: left;
     margin-top: 10px;
