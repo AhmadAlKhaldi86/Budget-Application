@@ -146,3 +146,34 @@ add.addEventListener("click", main, false);
 
 // Adding an event Listener to update the user name in the page. 
 nameInput.addEventListener("submit", addName, false);
+
+
+// ------------------------ Charts --------------------------- //
+var ctx = document.getElementById('myChart').getContext('2d');
+
+function chartUpdates() {
+    entSpending = User.getSpending('ent');
+    clothingSpending = User.getSpending('clothing');
+    billsSpending = User.getSpending('bills');
+    foodSpending = User.getSpending('food');
+    let myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Entertainment','Clothing','Bills','Food'],
+            datasets: [{
+                label: 'Expense by category',
+                data: [entSpending,clothingSpending,billsSpending,foodSpending],
+                backgroundColor: [
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ]
+            }]
+        },
+        options: {
+            responsive: false
+        }
+    })
+}
+add.onclick = chartUpdates;
