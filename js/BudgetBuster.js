@@ -137,8 +137,7 @@ function main() {
 function addName() {
     let nameChange = nameInput.value;
     document.querySelector("h1").textContent = `Hello ${nameChange}`;
-    return nameChange;
-    }
+}
 
 
 // ---------- Listener Section ---------- //
