@@ -1,24 +1,6 @@
-function setBudget() {
-let weeklyBudget = prompt("Enter your weekly budget", 0);
-document.querySelector("span").textContent += weeklyBudget;
-}
+// This Class is used to create a template for the user expenses for each category 
+// This class will also calculate the total expense and amount left in weekley budget. 
 
-function main() {
-    let g = document.getElementsByTagName("input")[0].value;
-    document.getElementsByTagName("h1")[0].textContent += g;
-}
-
-let d = new Date();
-let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-let n = weekday[d.getDay()];
-if (n === weekday[4]) {
-    setBudget();
-}
-
-
-
-// This Class is used to create a template for the user expenses 
 class spending {
     constructor() {
         this.entSpending =  [];
@@ -76,15 +58,20 @@ class spending {
 
 
 //----------------- Global Variables --------------------// 
+// Get the nameInput of user and update h1 header with customer name.
+let nameInput = document.getElementById("name");
+let nameChange = nameInput.value;
+document.querySelector("h1").textContent = `Hello ${nameChange}`;
+
+
 // Creating an object of new user
-// userName = get from input 
-let User = new spending("Ahmad");
-// add below is the button that submits new expense  
+let User = new spending(nameChange);
+
+// add is the button that submits new expense  
 let add = document.getElementById("Add");
-// selectItems is the dropDown that selects the category item
+
+// selectItems is the dropDown that selects the category item element
 let selectItems = document.getElementById("category");
-
-
 
 //-------------------- Main Function ------------------------// 
 // This Function will check "Category" + added Amount
