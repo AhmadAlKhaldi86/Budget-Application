@@ -75,7 +75,8 @@ let selectItems = document.getElementById("category");
 
 //-------------------- Main Function ------------------------// 
 // This Function will check "Category" + added Amount
-// Use them to add the amount entered in the respected category
+// It will add amount spent into respected category
+
 function main() {
     // amount variable will store the amount entered as an expense 
     let amountStr = document.getElementById("amount").value;
