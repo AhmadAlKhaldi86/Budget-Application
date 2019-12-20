@@ -7,19 +7,22 @@
     <title>BudgetBuster</title>
     <link rel="stylesheet" href="../css/BudgetBuster.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Budget Buster logo trans.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 </head>
 <body>
     <div class="outside">
     <img src="../images/Budget Buster logo trans.png" class="logo">
-    <h1>Hello, </h1>
+    <h1></h1>
     <p>
         <input id="name" placeholder="Enter you name" />
-        <button onclick = addName()>EnterName</button>
+        <input id="weeklyBudget" placeholder="0" />
+        <button onclick = addName()>Submit</button>
     </p>
-    <span> Weekly Budget: $500 </span>
+    <div id="span"> Weekly Budget: $ </div>
     <form action="https://www.google.com/" method="get"></form>
         <div id="page">
-            <h2>purchases </h2>
+            <h2>Purchases </h2>
             <p>Pick Category:</p>
             <select name="category" id="category">
                 <option value="ent" name="type" selected="selected">Entertainment</option>
@@ -68,6 +71,7 @@
         </div>
       </div>
       </div>
+    <canvas id="myChart" width="500" height="500"></canvas>
     <script src="../js/BudgetBuster.js"></script>
 </body>
 </html>
