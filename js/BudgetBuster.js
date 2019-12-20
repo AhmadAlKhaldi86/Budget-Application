@@ -1,13 +1,14 @@
 // This Class is used to create a template for the user expenses for each category 
-// This class will also calculate the total expense and amount left in weekley budget. 
+// This class will also calculate the total expense and amount left in weekly budget. 
 
 class spending {
     constructor() {
-        this.entSpending =  [];
-        this.foodSpending =  [];
-        this.billsSpending =  [];
-        this.clothingSpending =  [];
+        this.entSpending =  []; //empty array to place entertainment spending
+        this.foodSpending =  []; //empty array to place food spending
+        this.billsSpending =  []; //empty array to place bills spending
+        this.clothingSpending =  []; //empty array to place clothing spending
       }
+      //methods to add spending for each amount and add it to assigned empty array
     addEntSpending(amount) {
         this.entSpending.push(amount);
     }
@@ -23,7 +24,7 @@ class spending {
     addClothingSpending(amount) {
         this.clothingSpending.push(amount);
     }
-
+    // function to return sum of chosen category
     getSpending(selectedItem) {
         function addFun(a,b) { return a + b;}
         let sum;
@@ -54,14 +55,16 @@ class spending {
                 break;
         }
     }
+    //method to get total for amount spent 
     getTotalSpending() {
         let totalEl = document.getElementById("expense-amount");
         let totalSpending = this.getSpending('ent') + this.getSpending('clothing') + this.getSpending('bills') + this.getSpending('food');
         totalEl.textContent = totalSpending;
         return totalSpending;
     }
+    // method to take weekly budget minus spending
     getAmountLeft() {
-        let budget = 500;
+        let budget = document.getElementById("weeklyBudget").value;
         let remainingEl = document.getElementById("bank-amount");
         let amountLeft = budget - this.getTotalSpending()
         remainingEl.textContent = amountLeft;
@@ -86,6 +89,7 @@ let selectItems = document.getElementById("category");
 // This hint should show in page if user entered an amount less than 0 or a string. 
 let hintEL = document.getElementById("amountHint");
 
+
 //-------------------- Main Function ------------------------// 
 // This Function will check "Category" + added Amount
 // It will add amount spent into respected category
@@ -98,17 +102,17 @@ function main() {
     // selectedItem will store the category  entered with expense. 
     let selectedItem = selectItems.options[selectItems.selectedIndex].value;
     let nameChange = nameInput.value;
+    let budgetAlert = weeklyBudget.value;
+
     // If the amount entered is less than 1 or not a number it will not add or get the total.
     // Below conditional statement will check category then adds the amount expensed in in respected category
     // Also Once a new amount is added in respected category below will return new total expense of same respected category
     // It will also return the total spending across all categories. 
     
-    if (nameChange === "") {
-       hintEL.textContent = "Please enter your name first.";
-    } else if (amount < 1 || isNaN(amount)) {
+    if (amount < 1 || isNaN(amount)) {
         hintEL.textContent = "Please Enter a number bigger than 0";
     } else if (amount  > User.getAmountLeft()) {
-        hintEL.textContent = "You don't sufficient funds for this transaction";
+        hintEL.textContent = "You don't sufficient funds for this transaction"; //alert if insufficient funds
     } else if (selectedItem === 'food') {
         User.addFoodSpending(amount);
         User.getSpending(selectedItem);
@@ -134,11 +138,21 @@ function main() {
 
 // ----------- Name function ---------------- //
 // This function will add the name entered by user in the page h1 element. 
+//Also adds weekly budget input to span and checks if input was entered
+
 function addName() {
     let nameChange = nameInput.value;
     document.querySelector("h1").textContent = `Hello ${nameChange}`;
-}
+    let weeklyBudget = document.getElementById("weeklyBudget");
+    let weeklyBudgetValue = weeklyBudget.value;
+    document.querySelector("span").textContent += weeklyBudgetValue;
 
+    if (weeklyBudgetValue === "") {
+        hintEL.textContent = "Please enter your budget";
+    } else if (nameChange === "") {
+        hintEL.textContent = "Please enter your name first."; 
+    }
+}
 
 // ---------- Listener Section ---------- //
 // Adding an event Listener to trigger every time a user is adding new expense.
