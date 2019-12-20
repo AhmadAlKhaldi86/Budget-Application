@@ -103,8 +103,7 @@ li{
     position: relative;
     display: block;
   }
-
-
+ 
 @media only screen and (min-width: 600px) {
     .largeBox {
         flex-direction: row;
