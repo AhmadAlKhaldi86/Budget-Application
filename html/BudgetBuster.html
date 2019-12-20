@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="outside">
     <img src="../images/Budget Buster logo trans.png" class="logo">
     <h1>Hello, </h1>
     <p>
@@ -31,7 +32,6 @@
         <input type="submit" value="Add" id="add">
         <div id="amountHint" style="color: red;"></div>
     </form>
-
     <div class="largeBox">
         <div class="expenseBox" id="expense-list">
             <div>
@@ -62,6 +62,12 @@
             <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
         </div>
     </div>
+    <div class ="modal-overlay" role ="alert">
+        <div class ="piece-modal">
+          <img src="../images/warning2.gif">
+        </div>
+      </div>
+      </div>
     <script src="../js/BudgetBuster.js"></script>
 </body>
 </html>

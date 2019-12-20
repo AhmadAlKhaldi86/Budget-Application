@@ -80,6 +80,31 @@ li{
     margin-left: 10px;
 }
 
+.modal-overlay {
+    display: none;
+    align-items: center;
+    background: rgb(0, 0, 0, .89);
+    justify-content: center;
+    opacity: 1;
+    padding: 1.5 rem;
+    z-index: 9998;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  .piece-modal {
+    background: rgba(0, 0, 0, .89);
+    padding: 2.5rem 3rem;
+    text-align: center;
+    width: 100%;
+    align-content: center;
+    position: relative;
+    display: block;
+  }
+
+
 @media only screen and (min-width: 600px) {
     .largeBox {
         flex-direction: row;

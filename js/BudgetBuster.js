@@ -7,6 +7,7 @@ class spending {
         this.foodSpending =  [];
         this.billsSpending =  [];
         this.clothingSpending =  [];
+        this.budget = 0;
       }
     addEntSpending(amount) {
         this.entSpending.push(amount);
@@ -89,7 +90,12 @@ let hintEL = document.getElementById("amountHint");
 //-------------------- Main Function ------------------------// 
 // This Function will check "Category" + added Amount
 // It will add amount spent into respected category
-
+function warning() {
+    let image = document.querySelector(".modal-overlay");
+    if (User.getAmountLeft() <= 50){ 
+        image.style.display ="block";
+    }
+  }
 function main() {
     // amount variable will store the amount entered as an expense 
     let amountStr = document.getElementById("amount").value;
@@ -114,23 +120,36 @@ function main() {
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
+        warning();
     } else if (selectedItem === 'bills') {
         User.addBillsSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
+        warning();
     } else if (selectedItem === 'ent') {
         User.addEntSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
+        warning();
     } else if (selectedItem === 'clothing') {
         User.addClothingSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
+        warning();
     }
 }
+let image = document.getElementsByClassName("modal-overlay");
+// let outside = document.getElementsByClassName("piece-modal");
+image[0].onclick = function(e) {
+    image[0].style.display = "none";
+}
+
+// background.addEventListener("click", closeModal);
+
+// add.addEventListener("submit", warning);
 
 // ----------- Name function ---------------- //
 // This function will add the name entered by user in the page h1 element. 
