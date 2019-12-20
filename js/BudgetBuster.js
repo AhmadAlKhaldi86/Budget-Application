@@ -24,6 +24,7 @@ class spending {
     addClothingSpending(amount) {
         this.clothingSpending.push(amount);
     }
+
     // function to return sum of chosen category
     getSpending(selectedItem) {
         function addFun(a,b) { return a + b;}
@@ -70,6 +71,7 @@ class spending {
         remainingEl.textContent = amountLeft;
         return amountLeft;
     }
+
 }
 
 
@@ -106,8 +108,8 @@ function main() {
 
     // selectedItem will store the category  entered with expense. 
     let selectedItem = selectItems.options[selectItems.selectedIndex].value;
-    let nameChange = nameInput.value;
-    let budgetAlert = weeklyBudget.value;
+    // let nameChange = nameInput.value;
+    // let budgetAlert = weeklyBudget.value;
 
     // If the amount entered is less than 1 or not a number it will not add or get the total.
     // Below conditional statement will check category then adds the amount expensed in in respected category
@@ -149,7 +151,7 @@ function addName() {
     let nameChange = nameInput.value;
     document.querySelector("h1").textContent = `Hello, ${nameChange}`;
     let weeklyBudgetValue =  Number(weeklyBudget.value);
-    document.getElementById("span").textContent = `$${weeklyBudgetValue}`;
+    document.getElementById("span").textContent = `$${User.getAmountLeft()}`;
 
     if (weeklyBudgetValue === "") {
         hintEL.textContent = "Please enter your budget";
@@ -158,8 +160,9 @@ function addName() {
     } else if (weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
         hintEL.textContent = "Please Enter a number bigger than 0";
     }
-    console.log(typeof weeklyBudgetValue);
 }
+
+// ------------------------------------------- //
 
 
 
