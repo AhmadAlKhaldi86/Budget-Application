@@ -62,7 +62,7 @@ class spending {
         totalEl.textContent = totalSpending;
         return totalSpending;
     }
-    // method to take weekly budget minus spending
+    // method to take weekly budget minus spending and get what is left in the budget
     getAmountLeft() {
         let budget = document.getElementById("weeklyBudget").value;
         let remainingEl = document.getElementById("bank-amount");
@@ -88,6 +88,11 @@ let selectItems = document.getElementById("category");
 
 // This hint should show in page if user entered an amount less than 0 or a string. 
 let hintEL = document.getElementById("amountHint");
+
+//weekly budget to use everywhere
+let weeklyBudget = document.getElementById("weeklyBudget");
+
+
 
 
 //-------------------- Main Function ------------------------// 
@@ -137,22 +142,25 @@ function main() {
 }
 
 // ----------- Name function ---------------- //
-// This function will add the name entered by user in the page h1 element. 
-//Also adds weekly budget input to span and checks if input was entered
+// This function will add the name entered by user in the page h1 element and budget into span below. 
+//Also checks if input was entered into name and budget inputs
 
 function addName() {
     let nameChange = nameInput.value;
-    document.querySelector("h1").textContent = `Hello ${nameChange}`;
-    let weeklyBudget = document.getElementById("weeklyBudget");
-    let weeklyBudgetValue = weeklyBudget.value;
-    document.querySelector("span").textContent += weeklyBudgetValue;
+    document.querySelector("h1").textContent = `Hello, ${nameChange}`;
+    let weeklyBudgetValue =  Number(weeklyBudget.value);
+    document.getElementById("span").textContent = `$${weeklyBudgetValue}`;
 
     if (weeklyBudgetValue === "") {
         hintEL.textContent = "Please enter your budget";
     } else if (nameChange === "") {
         hintEL.textContent = "Please enter your name first."; 
     }
+
+    console.log(typeof weeklyBudgetValue);
 }
+
+
 
 // ---------- Listener Section ---------- //
 // Adding an event Listener to trigger every time a user is adding new expense.

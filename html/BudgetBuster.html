@@ -7,19 +7,20 @@
     <title>BudgetBuster</title>
     <link rel="stylesheet" href="../css/BudgetBuster.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Budget Buster logo trans.png">
 </head>
 <body>
     <img src="../images/Budget Buster logo trans.png" class="logo">
-    <h1>Hello, </h1>
+    <h1></h1>
     <p>
         <input id="name" placeholder="Enter you name" />
         <input id="weeklyBudget" placeholder="0" />
-        <button onclick = addName()>EnterName</button>
+        <button onclick = addName()>Submit</button>
     </p>
-    <span> Weekly Budget: $ </span>
+    <div id="span"> Weekly Budget: $ </div>
     <form action="https://www.google.com/" method="get"></form>
         <div id="page">
-            <h2>purchases </h2>
+            <h2>Purchases </h2>
             <p>Pick Category:</p>
             <select name="category" id="category">
                 <option value="ent" name="type" selected="selected">Entertainment</option>
@@ -63,6 +64,7 @@
             <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
         </div>
     </div>
+
     <script src="../js/BudgetBuster.js"></script>
 </body>
 </html>
