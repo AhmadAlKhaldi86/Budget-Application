@@ -155,8 +155,9 @@ function addName() {
         hintEL.textContent = "Please enter your budget";
     } else if (nameChange === "") {
         hintEL.textContent = "Please enter your name first."; 
+    } else if (weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
+        hintEL.textContent = "Please Enter a number bigger than 0";
     }
-
     console.log(typeof weeklyBudgetValue);
 }
 
