@@ -150,46 +150,45 @@ function main() {
         warning();
     }
 }
+
+// Adding an event Listener to trigger every time a user is adding new expense.
+add.addEventListener("click", main, false);
+
+
 let image = document.getElementsByClassName("modal-overlay");
 // let outside = document.getElementsByClassName("piece-modal");
 image[0].onclick = function(e) {
     image[0].style.display = "none";
 }
-
 // background.addEventListener("click", closeModal);
-
 // add.addEventListener("submit", warning);
 
-// ----------- Name function ---------------- //
+
+// ----------- Name&Budget function ---------------- //
 // This function will add the name entered by user in the page h1 element and budget into span below. 
-//Also checks if input was entered into name and budget inputs
+// Also checks if input was entered into name and budget inputs
+// If the budget changes it will update the document. 
 
 function addName() {
     let nameChange = nameInput.value;
-    document.querySelector("h1").textContent = `Hello, ${nameChange}`;
     let weeklyBudgetValue =  Number(weeklyBudget.value);
-    document.getElementById("span").textContent = `$${User.getAmountLeft()}`;
+    let heading = document.querySelector("h1");
+    let budgetEl = document.getElementById("span");
 
-    if (weeklyBudgetValue === "") {
-        hintEL.textContent = "Please enter your budget";
-    } else if (nameChange === "") {
-        hintEL.textContent = "Please enter your name first."; 
-    } else if (weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
+    if (nameChange === "") {
+        hintEL.textContent = "Please enter your name first.";
+    } else if (weeklyBudgetValue === "" || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
         hintEL.textContent = "Please enter your budget with a number bigger than 0";
+    } else {
+        heading.textContent = `Hello, ${nameChange}`;
+        budgetEl.textContent = `$${User.getAmountLeft()}`;
     }
 }
+// The trigger for  this function is added in html when submit  name or budget.
 
 
-// ----------------------- Listener Section ------------------ //
-// Adding an event Listener to trigger every time a user is adding new expense.
-add.addEventListener("click", main, false);
-
-// Adding an event Listener to update the user name in the page. 
-nameInput.addEventListener("submit", addName, false);
-
-
-
-// ------------------------ Charts --------------------------- //
+// ------------------------ Chart Section --------------------------- //
+// Chart Section depends on Chart.min.js library imported in our html file.
 var ctx = document.getElementById('myChart').getContext('2d');
 
 function chartUpdates() {
