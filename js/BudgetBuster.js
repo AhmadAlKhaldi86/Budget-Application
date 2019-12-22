@@ -197,7 +197,7 @@ function chartUpdates() {
     billsSpending = User.getSpending('bills');
     foodSpending = User.getSpending('food');
     let myChart = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: ['Entertainment','Clothing','Bills','Food'],
             datasets: [{
