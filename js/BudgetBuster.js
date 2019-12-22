@@ -191,33 +191,39 @@ function addName() {
 // Chart Section depends on Chart.min.js library imported in our html file.
 var ctx = document.getElementById('myChart').getContext('2d');
 
+let myChartObject = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Entertainment','Clothing','Bills','Food'],
+        datasets: [{
+            label: 'Expense by category',
+            data: [0,0,0,0],
+            backgroundColor: [
+                // 'rgba(255, 206, 86, 1)',
+                // 'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)'
+                '#FB62F6',
+                '#7DDF64',
+                '#FF4242',
+                '#B3FFFC'
+            ]
+        }]
+    },
+    options: {
+        responsive: false
+    }
+});
+
 function chartUpdates() {
     entSpending = User.getSpending('ent');
     clothingSpending = User.getSpending('clothing');
     billsSpending = User.getSpending('bills');
     foodSpending = User.getSpending('food');
-    let myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['Entertainment','Clothing','Bills','Food'],
-            datasets: [{
-                label: 'Expense by category',
-                data: [entSpending,clothingSpending,billsSpending,foodSpending],
-                backgroundColor: [
-                    // 'rgba(255, 206, 86, 1)',
-                    // 'rgba(75, 192, 192, 1)',
-                    // 'rgba(153, 102, 255, 1)',
-                    // 'rgba(255, 159, 64, 1)'
-                    '#FB62F6',
-                    '#7DDF64',
-                    '#FF4242',
-                    '#B3FFFC'
-                ]
-            }]
-        },
-        options: {
-            responsive: false
-        }
-    })
+    myChartObject.data.datasets[0].data[0]  = entSpending;
+    myChartObject.data.datasets[0].data[1]  = clothingSpending;
+    myChartObject.data.datasets[0].data[2]  = billsSpending;
+    myChartObject.data.datasets[0].data[3]  = foodSpending;
+    myChartObject.update(); 
 }
 add.onclick = chartUpdates;
