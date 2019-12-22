@@ -25,7 +25,7 @@ class spending {
         this.clothingSpending.push(amount);
     }
 
-    // function to return sum of chosen category
+    // function to return sum of each category
     getSpending(selectedItem) {
         function addFun(a,b) { return a + b;}
         let sum;
@@ -76,25 +76,24 @@ class spending {
 
 
 //----------------- Global Variables --------------------// 
-// Get the nameInput of user to update h1 header with customer name.
+// Having Global Variables to be able to add listeners on captured elements/variables. 
+// HTML Element of the nameInput of user to update h1 header with customer name.
 let nameInput = document.getElementById("name");
 
 // Creating an object of new user
 let User = new spending();
 
-// add is the button that submits new expense  
+// add is the button element that submits new expense  
 let add = document.getElementById("add");
 
-// selectItems is the dropDown that selects the category item element
+// selectItems is the dropDown Element that selects the category item element
 let selectItems = document.getElementById("category");
 
-// This hint should show in page if user entered an amount less than 0 or a string. 
+// This hint should show a hint on  the webpage if there is invalid action by user.  
 let hintEL = document.getElementById("amountHint");
 
 //weekly budget to use everywhere
 let weeklyBudget = document.getElementById("weeklyBudget");
-
-
 
 
 //-------------------- Main Function ------------------------// 
@@ -106,15 +105,15 @@ function warning() {
         image.style.display ="block";
     }
   }
+
 function main() {
     // amount variable will store the amount entered as an expense 
     let amountStr = document.getElementById("amount").value;
     let amount = Number(amountStr);
 
-    // selectedItem will store the category  entered with expense. 
+    // selectedItem will store the category entered with expense amount.
     let selectedItem = selectItems.options[selectItems.selectedIndex].value;
-    // let nameChange = nameInput.value;
-    // let budgetAlert = weeklyBudget.value;
+
 
     // If the amount entered is less than 1 or not a number it will not add or get the total.
     // Below conditional statement will check category then adds the amount expensed in in respected category
@@ -176,20 +175,19 @@ function addName() {
     } else if (nameChange === "") {
         hintEL.textContent = "Please enter your name first."; 
     } else if (weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
-        hintEL.textContent = "Please Enter a number bigger than 0";
+        hintEL.textContent = "Please enter your budget with a number bigger than 0";
     }
 }
 
-// ------------------------------------------- //
 
-
-
-// ---------- Listener Section ---------- //
+// ----------------------- Listener Section ------------------ //
 // Adding an event Listener to trigger every time a user is adding new expense.
 add.addEventListener("click", main, false);
 
 // Adding an event Listener to update the user name in the page. 
 nameInput.addEventListener("submit", addName, false);
+
+
 
 // ------------------------ Charts --------------------------- //
 var ctx = document.getElementById('myChart').getContext('2d');
