@@ -125,24 +125,28 @@ function main() {
     } else if (amount  > User.getAmountLeft()) {
         hintEL.textContent = "You don't sufficient funds for this transaction"; //alert if insufficient funds
     } else if (selectedItem === 'food') {
+        hintEL.textContent = "";
         User.addFoodSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
         warning();
     } else if (selectedItem === 'bills') {
+        hintEL.textContent = "";
         User.addBillsSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
         warning();
     } else if (selectedItem === 'ent') {
+        hintEL.textContent = "";
         User.addEntSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
         User.getAmountLeft();
         warning();
     } else if (selectedItem === 'clothing') {
+        hintEL.textContent = "";
         User.addClothingSpending(amount);
         User.getSpending(selectedItem);
         User.getTotalSpending();
@@ -180,6 +184,7 @@ function addName() {
     } else if (weeklyBudgetValue === "" || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
         hintEL.textContent = "Please enter your budget with a number bigger than 0";
     } else {
+        hintEL.textContent = "";
         heading.textContent = `Hello, ${nameChange}`;
         budgetEl.textContent = `$${User.getAmountLeft()}`;
     }
