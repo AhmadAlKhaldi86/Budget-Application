@@ -123,7 +123,7 @@ function main() {
     if (amount < 1 || isNaN(amount)) {
         hintEL.textContent = "Please Enter a number bigger than 0";
     } else if (amount  > User.getAmountLeft()) {
-        hintEL.textContent = "You don't sufficient funds for this transaction"; //alert if insufficient funds
+        hintEL.textContent = "You don't have sufficient funds for this transaction"; //alert if insufficient funds
     } else if (selectedItem === 'food') {
         hintEL.textContent = "";
         User.addFoodSpending(amount);
